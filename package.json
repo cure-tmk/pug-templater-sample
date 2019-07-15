@@ -1,0 +1,18 @@
+{
+  "name": "pug-templater-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "tomoki_kano",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "pug-cli": "^1.0.0-alpha6",
+    "pug-loader": "^2.4.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6"
+  },
+  "scripts": {
+    "build": "NODE_ENV=development webpack",
+    "build:prod": "webpack"
+  }
+}
