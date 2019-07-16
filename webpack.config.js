@@ -1,19 +1,26 @@
 const path = require('path');
+const mode = process.env.NODE_ENV || 'production';
+const isDev = mode === 'development'
 
 module.exports = {
   entry: path.resolve(__dirname, './src/js/index.js'),
-  mode: process.env.NODE_ENV || 'production',
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'dist/js'),
   },
-  devtool: process.env.NODE_ENV && 'inline-source-map',
+  mode,
+  devtool: isDev && 'inline-source-map',
   module: {
     rules: [
       {
-        test: /\.pug$/,
-        use: ['pug-loader']
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
       },
+      {
+        test: /\.pug$/,
+        loaders: ['pug-loader']
+      }
     ]
   }
 };
