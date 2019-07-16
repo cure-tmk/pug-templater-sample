@@ -14,12 +14,12 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
         loader: 'babel-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.pug$/,
-        loaders: ['pug-loader']
+        loader: 'pug-loader'
       }
     ]
   }
